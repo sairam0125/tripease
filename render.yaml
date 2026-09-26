@@ -1,0 +1,23 @@
+# Optional Render "Blueprint" for the backend. You can also create the service by hand in the dashboard
+# (see README > Deployment). Secrets are marked sync:false so you type them in the Render UI.
+services:
+  - type: web
+    name: tripease-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    healthCheckPath: /api/health
+    envVars:
+      - key: DB_URL
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGINS
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false

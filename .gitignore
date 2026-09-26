@@ -1,0 +1,19 @@
+# Java / Maven
+backend/target/
+*.class
+*.log
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Secrets & local config (never commit API keys!)
+.env
+*.env.local
+backend/src/main/resources/application-local.properties
+
+# IDE / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
