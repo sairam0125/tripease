@@ -8,29 +8,43 @@ services:
     healthCheckPath: /api/health
 
     envVars:
-      - key: DB_URL
-        fromDatabase:
-          name: tripease-db
-          property: connectionString
+     envVars:
+  - key: SPRING_PROFILES_ACTIVE
+    value: prod
 
-      - key: DB_USERNAME
-        fromDatabase:
-          name: tripease-db
-          property: user
+  - key: DB_HOST
+    fromDatabase:
+      name: tripease-db
+      property: host
 
-      - key: DB_PASSWORD
-        fromDatabase:
-          name: tripease-db
-          property: password
+  - key: DB_PORT
+    fromDatabase:
+      name: tripease-db
+      property: port
 
-      - key: JWT_SECRET
-        generateValue: true
+  - key: DB_NAME
+    fromDatabase:
+      name: tripease-db
+      property: database
 
-      - key: CORS_ORIGINS
-        sync: false
+  - key: DB_USERNAME
+    fromDatabase:
+      name: tripease-db
+      property: user
 
-      - key: OPENAI_API_KEY
-        sync: false
+  - key: DB_PASSWORD
+    fromDatabase:
+      name: tripease-db
+      property: password
+
+  - key: JWT_SECRET
+    generateValue: true
+
+  - key: CORS_ORIGINS
+    sync: false
+
+  - key: OPENAI_API_KEY
+    sync: false
 
 databases:
   - name: tripease-db
