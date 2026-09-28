@@ -23,7 +23,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * "AI price insight" for one trip or hotel: we compute the facts ourselves (price series, cheapest
- * day, price if you wait a week) and let GPT-3.5 phrase the advice. Without an API key the same
+ * day, price if you wait a week) and let llama-3.1 phrase the advice. Without an API key the same
  * facts are turned into advice by simple rules. Results are cached for 30 minutes.
  */
 @Service

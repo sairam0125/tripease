@@ -32,7 +32,7 @@ import java.util.stream.Collectors;
  * Travel chatbot = "retrieval + generation".
  *  1. Understand the message (cities, mode, date, budget) with light NLP.
  *  2. Retrieve LIVE options from our own database (same pricing engine as the booking flow).
- *  3. Ask GPT-3.5 to phrase a friendly answer using ONLY that data (no invented fares).
+ *  3. Ask llama-3.1 to phrase a friendly answer using ONLY that data (no invented fares).
  * Without an OpenAI key, step 3 is replaced by a template so the bot still works.
  */
 @Service

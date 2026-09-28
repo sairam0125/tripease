@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * Thin wrapper around OpenAI's Chat Completions API (default model: gpt-3.5-turbo).
+ * Thin wrapper around OpenAI's Chat Completions API (llama-3.1).
  * Returns Optional.empty() when no key is configured or the call fails, so callers can
  * transparently fall back to rule-based answers.
  */

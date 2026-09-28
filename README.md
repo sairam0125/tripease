@@ -1,7 +1,7 @@
 # TripEase - one-stop travel booking
 
 Search, compare and book **flights, trains, buses, hotels and resorts** in one app, with
-**price graphs**, **AI price insights (OpenAI GPT-3.5)** and a **travel chatbot**.
+**price graphs**, **AI price insights ** and a **travel chatbot**.
 
 **Stack:** Java 17 · Spring Boot 3 (Web, Data JPA, Security, Validation) · MySQL · JWT · React 18 (Vite) · Recharts · OpenAI API
 
@@ -28,7 +28,7 @@ React (Vite)  --HTTPS/JSON-->  Spring Boot REST API  --JPA-->  MySQL
    |                              |  Controller -> Service -> Repository
    | JWT in Authorization header  |  JwtAuthFilter, SecurityConfig, GlobalExceptionHandler
    |                              +--> PricingService (demand-based pricing, used everywhere)
-   |                              +--> InsightService / ChatService --> OpenAiClient --> OpenAI (gpt-3.5-turbo)
+   |                              +--> InsightService / ChatService --> OpenAiClient --> OpenAI (groq llama-3.1)
    +-- Recharts price graph, chat widget, protected routes
 ```
 
@@ -87,7 +87,7 @@ export OPENAI_API_KEY=sk-...          # never commit this
 mvn spring-boot:run -Dspring-boot.run.profiles=h2
 ```
 Without a key everything still works: insights and the chatbot use rule-based answers. In the UI you can tell which
-is active: AI answers say "Written by gpt-3.5-turbo", rule answers say "Calculated from fare trends".
+is active: AI answers say "Written by groq llama-3.1", rule answers say "Calculated from fare trends".
 
 ### Environment variables (backend)
 
